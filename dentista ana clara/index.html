@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO — será sobrescrito via JS pelo config.js -->
+  <title>[NOME DA CLÍNICA] — Dentista em [CIDADE]</title>
+  <meta name="description" content="Clínica odontológica premium em [CIDADE]. Especializada em [ESPECIALIDADE]. Agende sua avaliação.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="[NOME DA CLÍNICA] — Dentista em [CIDADE]">
+  <meta property="og:description" content="Clínica odontológica premium. Agende sua avaliação.">
+  <meta property="og:image"       content="dentist_hero.jpg">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "[NOME DA CLÍNICA]",
+    "description": "[DESCRIÇÃO DA CLÍNICA]",
+    "telephone": "[TELEFONE]",
+    "email": "[EMAIL]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[ENDEREÇO]",
+      "addressLocality": "[CIDADE]",
+      "addressRegion": "[ESTADO]",
+      "postalCode": "[CEP]",
+      "addressCountry": "BR"
+    },
+    "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-13:00"],
+    "url": "[WEBSITE]",
+    "image": "dentist_hero.jpg"
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+
+  <!-- Fontes e estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar" role="navigation" aria-label="Menu principal">
+  <div class="container">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Ir para o início">
+        <div class="nav-logo-icon">🦷</div>
+        <span data-config="CLINIC_NAME">[NOME DA CLÍNICA]</span>
+      </a>
+
+      <!-- Links desktop -->
+      <ul class="nav-links" role="list">
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#treatments">Tratamentos</a></li>
+        <li><a href="#results">Resultados</a></li>
+        <li><a href="#structure">Estrutura</a></li>
+        <li><a href="#testimonials">Depoimentos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contato</a></li>
+        <li>
+          <a href="#booking" class="nav-cta btn" id="nav-book-btn">
+            📅 Agendar Avaliação
+          </a>
+        </li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+  <a href="#hero">Início</a>
+  <a href="#about">Sobre</a>
+  <a href="#treatments">Tratamentos</a>
+  <a href="#results">Resultados</a>
+  <a href="#structure">Estrutura</a>
+  <a href="#testimonials">Depoimentos</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contato</a>
+  <a href="#booking" class="btn btn-primary btn-lg">📅 Agendar Avaliação</a>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero" aria-label="Apresentação principal">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Conteúdo -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>🦷</span>
+          <span>Odontologia de Excelência</span>
+        </div>
+        <p class="hero-specialty">ODONTOLOGIA <span data-config="SPECIALTY">[ESPECIALIDADE]</span></p>
+        <h1 class="hero-title">
+          Seu Sorriso Merece um<br>
+          <span>Cuidado Especial</span>
+        </h1>
+        <p class="hero-subtitle" data-config="DESCRIPTION_SHORT">
+          [DIFERENCIAL CURTO DA CLÍNICA — configure em config.js]
+        </p>
+
+        <div class="hero-btns">
+          <a href="#booking" class="btn btn-primary btn-lg" id="hero-book-btn">
+            📅 Agendar Minha Avaliação
+          </a>
+          <a href="#treatments" class="btn btn-ghost btn-lg">
+            Conhecer Tratamentos →
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span>Atendimento personalizado e humanizado</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span>Profissionais qualificados e especializados</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span>Ambiente moderno e aconchegante</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span>Tecnologia odontológica de ponta</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foto do Dentista -->
+      <div class="hero-image-wrap">
+        <div class="hero-float-tag">
+          <strong data-config="YEARS_EXPERIENCE">[X]+</strong>
+          Anos de<br>Experiência
+        </div>
+        <div class="hero-photo-card">
+          <img src="dentist_hero.jpg"
+               data-src="DOCTOR_PHOTO"
+               alt="Foto do dentista"
+               width="420" height="540"
+               loading="eager">
+          <div class="hero-card-badge">
+            <div>
+              <div class="hero-card-stars">★★★★★</div>
+            </div>
+            <div class="hero-card-text">
+              <strong data-config="GOOGLE_RATING">[AVALIAÇÃO GOOGLE]</strong>
+              <span>no Google Reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS STRIP
+     ============================================================ -->
+<section id="stats" aria-label="Números da clínica">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-stars">★★★★★</div>
+        <div class="stat-number" data-config="GOOGLE_RATING" data-target="4.9">4.9</div>
+        <p class="stat-label">Avaliação Google</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="2000+" data-config="PATIENTS_COUNT">[X]+</div>
+        <p class="stat-label">Pacientes Atendidos</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="15+" data-config="YEARS_EXPERIENCE">[X]+</div>
+        <p class="stat-label">Anos de Experiência</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="8" data-config="SPECIALTIES_COUNT">[X]</div>
+        <p class="stat-label">Especialidades</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOBRE
+     ============================================================ -->
+<section id="about" class="section" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Imagem -->
+      <div class="about-img-wrap fade-in-up">
+        <div class="about-img-main">
+          <img src="dentist_hero.jpg"
+               data-src="DOCTOR_PHOTO2"
+               alt="Foto do dentista"
+               width="500" height="560"
+               loading="lazy">
+        </div>
+        <div class="about-cro-badge">
+          <span>Registro Profissional</span>
+          <strong data-config="DENTIST_CRO">[CRO]</strong>
+        </div>
+      </div>
+
+      <!-- Conteúdo -->
+      <div class="about-content">
+        <span class="section-label">👨‍⚕️ Sobre o Profissional</span>
+        <h2 class="section-title" id="about-title">
+          Conheça <span data-config="DENTIST_NAME">[NOME DO DENTISTA]</span>
+        </h2>
+        <p style="color:var(--text-light);line-height:1.8;margin-bottom:24px" data-config="DESCRIPTION_LONG">
+          [BIOGRAFIA PROFISSIONAL COMPLETA — configure em config.js]
+        </p>
+
+        <div class="about-info-grid fade-in-up delay-2">
+          <div class="about-info-item">
+            <p class="label">Formação</p>
+            <p class="value">[FORMAÇÃO ACADÊMICA]</p>
+          </div>
+          <div class="about-info-item">
+            <p class="label">Especialização</p>
+            <p class="value" data-config="SPECIALTY">[ESPECIALIDADE]</p>
+          </div>
+          <div class="about-info-item">
+            <p class="label">CRO</p>
+            <p class="value" data-config="DENTIST_CRO">[CRO]</p>
+          </div>
+          <div class="about-info-item">
+            <p class="label">Experiência</p>
+            <p class="value"><span data-config="YEARS_EXPERIENCE">[X]</span>+ anos</p>
+          </div>
+        </div>
+
+        <a href="#booking" class="btn btn-primary btn-lg fade-in-up delay-3">
+          📅 Agendar uma Consulta
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRATAMENTOS
+     ============================================================ -->
+<section id="treatments" class="section" aria-labelledby="treatments-title">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">🦷 Serviços</span>
+      <h2 class="section-title fade-in-up delay-1" id="treatments-title">
+        Nossos <span>Tratamentos</span>
+      </h2>
+      <p class="section-subtitle fade-in-up delay-2">
+        Oferecemos soluções completas para a sua saúde e estética bucal com tecnologia moderna e profissionais especializados.
+      </p>
+    </div>
+
+    <!-- Cards gerados via JS -->
+    <div class="treatments-grid" id="treatments-grid"></div>
+
+    <div class="text-center" style="margin-top:40px">
+      <a href="#booking" class="btn btn-primary btn-lg fade-in-up">
+        Agendar Avaliação Gratuita →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Modal de Tratamento -->
+<div class="modal-overlay" id="treatment-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <div class="modal-icon" id="modal-icon">🦷</div>
+        <h2 class="modal-name" id="modal-name">Tratamento</h2>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Fechar">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-section">
+        <h4>Para quem é?</h4>
+        <p id="modal-for" style="color:var(--text-light);font-size:.92rem;line-height:1.7"></p>
+      </div>
+      <div class="modal-section">
+        <h4>Como funciona?</h4>
+        <p id="modal-how" style="color:var(--text-light);font-size:.92rem;line-height:1.7"></p>
+      </div>
+      <div class="modal-section">
+        <h4>Benefícios</h4>
+        <div class="modal-benefits" id="modal-benefits"></div>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#booking" class="btn btn-primary" id="modal-book-btn" onclick="document.getElementById('treatment-modal').classList.remove('open');document.body.style.overflow=''">
+          📅 Agendar Avaliação
+        </a>
+        <a href="#" class="btn btn-wa" data-wa="">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     CTA BANNER
+     ============================================================ -->
+<div class="cta-banner" aria-label="Chamada para ação">
+  <div class="container">
+    <div class="cta-banner-content">
+      <h2 class="fade-in-up">Pronto para Cuidar do Seu Sorriso?</h2>
+      <p class="fade-in-up delay-1">
+        Agende sua avaliação e descubra o tratamento ideal para você.
+        Nossa equipe está pronta para te atender!
+      </p>
+      <div class="cta-banner-btns fade-in-up delay-2">
+        <a href="#booking" class="btn btn-white btn-lg">📅 Agendar Avaliação</a>
+        <a href="#" class="btn btn-wa btn-lg" data-wa="">💬 Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     GALERIA
+     ============================================================ -->
+<section id="gallery" class="section" aria-labelledby="gallery-title">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">📸 Portfólio</span>
+      <h2 class="section-title fade-in-up delay-1" id="gallery-title">
+        Conheça Nosso <span>Trabalho</span>
+      </h2>
+      <p class="section-subtitle fade-in-up delay-2">
+        Explore nosso espaço, equipamentos e o cuidado que dedicamos a cada paciente.
+      </p>
+    </div>
+
+    <div class="gallery-filters fade-in-up delay-2">
+      <button class="gallery-filter-btn active" data-filter="all">Todos</button>
+      <button class="gallery-filter-btn" data-filter="clinica">Clínica</button>
+      <button class="gallery-filter-btn" data-filter="procedimentos">Procedimentos</button>
+      <button class="gallery-filter-btn" data-filter="equipe">Equipe</button>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizar imagem ampliada">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">✕</button>
+  <img id="lightbox-img" src="" alt="Foto ampliada">
+</div>
+
+<!-- ============================================================
+     ANTES E DEPOIS
+     ============================================================ -->
+<section id="results" class="section" aria-labelledby="results-title">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">✨ Transformações</span>
+      <h2 class="section-title fade-in-up delay-1" id="results-title">
+        <span>Resultados</span>
+      </h2>
+      <p class="section-subtitle fade-in-up delay-2">
+        Resultados reais de pacientes que confiaram no nosso trabalho.
+      </p>
+    </div>
+
+    <div id="ba-container"></div>
+
+    <p class="before-after-notice fade-in-up">
+      ⚖️ Imagens publicadas com autorização expressa dos pacientes e em conformidade com as normas do CFO e normas profissionais aplicáveis à publicidade odontológica.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     ESTRUTURA
+     ============================================================ -->
+<section id="structure" class="section" aria-labelledby="structure-title">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">🏥 Nossa Clínica</span>
+      <h2 class="section-title fade-in-up delay-1" id="structure-title">
+        Um Ambiente Preparado <span>Para Você</span>
+      </h2>
+      <p class="section-subtitle fade-in-up delay-2">
+        Conforto, higiene e tecnologia em cada detalhe do nosso espaço.
+      </p>
+    </div>
+
+    <div class="structure-grid fade-in-up">
+      <div class="structure-card" onclick="openLightbox('clinic_reception.jpg')">
+        <img src="clinic_reception.jpg" alt="Recepção da clínica" loading="lazy">
+        <div class="structure-card-info">
+          <h4>Recepção</h4>
+          <p>Ambiente acolhedor para sua espera</p>
+        </div>
+      </div>
+      <div class="structure-card" onclick="openLightbox('clinic_treatment.jpg')">
+        <img src="clinic_treatment.jpg" alt="Consultório odontológico" loading="lazy">
+        <div class="structure-card-info">
+          <h4>Consultório</h4>
+          <p>Equipado com tecnologia de última geração</p>
+        </div>
+      </div>
+      <div class="structure-card" onclick="openLightbox('clinic_treatment.jpg')">
+        <img src="clinic_treatment.jpg" alt="Equipamentos odontológicos" loading="lazy">
+        <div class="structure-card-info">
+          <h4>Equipamentos</h4>
+          <p>Tecnologia de ponta para melhores resultados</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="structure-badges fade-in-up delay-2" style="margin-top:32px">
+      <div class="structure-badge">
+        <div class="structure-badge-icon">🧼</div>
+        <h4>Higiene Total</h4>
+        <p>Protocolos rigorosos de biossegurança</p>
+      </div>
+      <div class="structure-badge">
+        <div class="structure-badge-icon">🔬</div>
+        <h4>Tecnologia</h4>
+        <p>Equipamentos modernos e precisos</p>
+      </div>
+      <div class="structure-badge">
+        <div class="structure-badge-icon">♿</div>
+        <h4>Acessibilidade</h4>
+        <p>Espaço preparado para todos</p>
+      </div>
+      <div class="structure-badge">
+        <div class="structure-badge-icon">🛡️</div>
+        <h4>Segurança</h4>
+        <p>Esterilização certificada</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EQUIPE
+     ============================================================ -->
+<section id="team" class="section" aria-labelledby="team-title">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">👥 Profissionais</span>
+      <h2 class="section-title fade-in-up delay-1" id="team-title">
+        Nossa <span>Equipe</span>
+      </h2>
+      <p class="section-subtitle fade-in-up delay-2">
+        Profissionais dedicados, qualificados e comprometidos com a sua saúde bucal.
+      </p>
+    </div>
+    <div class="team-grid" id="team-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEPOIMENTOS
+     ============================================================ -->
+<section id="testimonials" class="section" aria-labelledby="testimonials-title">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">⭐ Avaliações</span>
+      <h2 class="section-title fade-in-up delay-1" id="testimonials-title">
+        O Que Nossos <span>Pacientes Dizem</span>
+      </h2>
+      <p class="section-subtitle fade-in-up delay-2">
+        Depoimentos reais de quem já cuidou do sorriso conosco.
+      </p>
+    </div>
+
+    <div class="testimonials-grid" id="testimonials-grid"></div>
+
+    <div class="testimonials-cta fade-in-up">
+      <a href="#" class="btn btn-outline" data-href="GOOGLE_REVIEWS_URL" id="google-reviews-btn" target="_blank" rel="noopener">
+        ⭐ Ver Mais Avaliações no Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DIFERENCIAIS
+     ============================================================ -->
+<section id="differentials" class="section" aria-labelledby="differentials-title">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">🏆 Por que nos Escolher</span>
+      <h2 class="section-title fade-in-up delay-1" id="differentials-title">
+        Por que Escolher <span data-config="CLINIC_NAME">[NOME DA CLÍNICA]</span>?
+      </h2>
+      <p class="section-subtitle fade-in-up delay-2">
+        Nossa clínica foi construída para proporcionar a melhor experiência odontológica que você já teve.
+      </p>
+    </div>
+    <div class="differentials-grid" id="differentials-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LOCALIZAÇÃO
+     ============================================================ -->
+<section id="location" class="section" aria-labelledby="location-title">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px">
+      <span class="section-label fade-in-up">📍 Localização</span>
+      <h2 class="section-title fade-in-up delay-1" id="location-title">
+        Onde <span>Estamos</span>
+      </h2>
+    </div>
+
+    <div class="location-grid">
+      <div class="fade-in-up">
+        <div class="location-detail">
+          <span class="location-detail-icon">📍</span>
+          <div class="location-detail-text">
+            <p class="label">Endereço</p>
+            <p class="value">
+              <span data-config="ADDRESS">[ENDEREÇO]</span>,
+              <span data-config="NEIGHBORHOOD">[BAIRRO]</span><br>
+              <span data-config="CITY">[CIDADE]</span> — <span data-config="STATE">[ESTADO]</span><br>
+              CEP: <span data-config="ZIP_CODE">[CEP]</span>
+            </p>
+          </div>
+        </div>
+        <div class="location-detail">
+          <span class="location-detail-icon">📞</span>
+          <div class="location-detail-text">
+            <p class="label">Telefone</p>
+            <p class="value"><a href="tel:" data-config="PHONE" id="location-phone">[TELEFONE]</a></p>
+          </div>
+        </div>
+        <div class="location-detail">
+          <span class="location-detail-icon">💬</span>
+          <div class="location-detail-text">
+            <p class="label">WhatsApp</p>
+            <p class="value">
+              <a href="#" data-wa="" data-config="WHATSAPP">[WHATSAPP]</a>
+            </p>
+          </div>
+        </div>
+        <div class="location-detail">
+          <span class="location-detail-icon">✉️</span>
+          <div class="location-detail-text">
+            <p class="label">E-mail</p>
+            <p class="value"><a href="mailto:" data-config="EMAIL" id="location-email">[E-MAIL]</a></p>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn-primary btn-lg" data-href="GOOGLE_MAPS_LINK" id="maps-btn" target="_blank" rel="noopener noreferrer" style="margin-top:12px">
+          🗺️ Como Chegar
+        </a>
+      </div>
+
+      <!-- Mapa -->
+      <div class="map-container fade-in-up delay-2" id="map-container">
+        <div class="map-placeholder">
+          <div class="map-icon">📍</div>
+          <p>Configure o link do Google Maps no arquivo config.js</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HORÁRIOS
+     ============================================================ -->
+<section id="hours" class="section-sm" aria-labelledby="hours-title">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:40px">
+      <span class="section-label fade-in-up">🕐 Funcionamento</span>
+      <h2 class="section-title fade-in-up delay-1" id="hours-title">
+        Horário de <span>Atendimento</span>
+      </h2>
+    </div>
+    <div class="hours-grid" id="hours-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FORMAS DE PAGAMENTO
+     ============================================================ -->
+<section id="payment" class="section-sm" aria-labelledby="payment-title">
+  <div class="container text-center">
+    <span class="section-label fade-in-up">💳 Pagamento</span>
+    <h2 class="section-title fade-in-up delay-1" id="payment-title">
+      Formas de <span>Atendimento</span>
+    </h2>
+    <p class="section-subtitle fade-in-up delay-2">
+      Facilidade para você cuidar do seu sorriso sem complicação.
+    </p>
+    <div class="payment-grid" id="payment-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AGENDAMENTO
+     ============================================================ -->
+<section id="booking" class="section" aria-labelledby="booking-title">
+  <div class="container">
+    <div class="booking-grid">
+
+      <div class="booking-info fade-in-up">
+        <span class="section-label">📅 Agendamento</span>
+        <h2 id="booking-title">
+          Agende Sua<br>
+          <span style="color:var(--primary);font-family:var(--font-heading)">Avaliação</span>
+        </h2>
+        <p>
+          Dê o primeiro passo para transformar seu sorriso.
+          Nossa equipe entrará em contato para confirmar o melhor horário para você.
+        </p>
+        <div class="booking-features">
+          <div class="booking-feature">
+            <div class="booking-feature-icon">⚡</div>
+            <span>Resposta rápida pelo WhatsApp</span>
+          </div>
+          <div class="booking-feature">
+            <div class="booking-feature-icon">🎯</div>
+            <span>Avaliação personalizada</span>
+          </div>
+          <div class="booking-feature">
+            <div class="booking-feature-icon">🛡️</div>
+            <span>Sigilo e privacidade garantidos</span>
+          </div>
+          <div class="booking-feature">
+            <div class="booking-feature-icon">📍</div>
+            <span>Localização de fácil acesso</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-form-card fade-in-up delay-2">
+        <h3 style="font-family:var(--font-heading);font-size:1.5rem;color:var(--text);margin-bottom:24px">
+          Solicitar Agendamento
+        </h3>
+        <form id="booking-form" novalidate>
+          <div class="form-group">
+            <label for="campo-nome">Nome completo <span>*</span></label>
+            <input type="text" id="campo-nome" name="nome" class="form-control" placeholder="Seu nome" required autocomplete="name">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="campo-telefone">Telefone <span>*</span></label>
+              <input type="tel" id="campo-telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" required autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="campo-email">E-mail</label>
+              <input type="email" id="campo-email" name="email" class="form-control" placeholder="seu@email.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="campo-tratamento">Tratamento de interesse</label>
+            <select id="campo-tratamento" name="tratamento" class="form-control">
+              <option value="">Selecione um tratamento</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="campo-dia">Melhor dia</label>
+              <select id="campo-dia" name="dia" class="form-control">
+                <option value="">Indiferente</option>
+                <option>Segunda-feira</option>
+                <option>Terça-feira</option>
+                <option>Quarta-feira</option>
+                <option>Quinta-feira</option>
+                <option>Sexta-feira</option>
+                <option>Sábado</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="campo-horario">Melhor horário</label>
+              <select id="campo-horario" name="horario" class="form-control">
+                <option value="">Indiferente</option>
+                <option>Manhã</option>
+                <option>Tarde</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="campo-mensagem">Mensagem (opcional)</label>
+            <textarea id="campo-mensagem" name="mensagem" class="form-control" rows="3" placeholder="Conte um pouco mais sobre o que precisa..."></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-lg">
+              📤 Enviar Solicitação via WhatsApp
+            </button>
+            <a href="#" class="btn btn-wa btn-lg" data-wa-form="" id="wa-form-btn">
+              💬 Agendar pelo WhatsApp Diretamente
+            </a>
+          </div>
+
+          <p class="form-lgpd">
+            🔒 Seus dados são tratados com total sigilo conforme a
+            <a href="privacidade.html" target="_blank">Política de Privacidade</a>
+            e a LGPD. Não enviamos spam.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section id="faq" class="section" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">❓ Dúvidas</span>
+      <h2 class="section-title fade-in-up delay-1" id="faq-title">
+        Perguntas <span>Frequentes</span>
+      </h2>
+      <p class="section-subtitle fade-in-up delay-2">
+        Respondemos as dúvidas mais comuns para te ajudar.
+      </p>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTATO
+     ============================================================ -->
+<section id="contact" class="section" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px">
+      <span class="section-label fade-in-up">📞 Fale Conosco</span>
+      <h2 class="section-title fade-in-up delay-1" id="contact-title">
+        Entre em <span>Contato</span>
+      </h2>
+    </div>
+
+    <div class="contact-grid fade-in-up">
+      <div class="contact-card">
+        <div class="contact-card-icon">📞</div>
+        <p class="contact-card-label">Telefone</p>
+        <p class="contact-card-value">
+          <a href="tel:" id="contact-phone" data-config="PHONE">[TELEFONE]</a>
+        </p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">💬</div>
+        <p class="contact-card-label">WhatsApp</p>
+        <p class="contact-card-value">
+          <a href="#" data-wa="" id="contact-wa" data-config="WHATSAPP">[WHATSAPP]</a>
+        </p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">✉️</div>
+        <p class="contact-card-label">E-mail</p>
+        <p class="contact-card-value">
+          <a href="mailto:" id="contact-email" data-config="EMAIL">[E-MAIL]</a>
+        </p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">📍</div>
+        <p class="contact-card-label">Endereço</p>
+        <p class="contact-card-value">
+          <span data-config="ADDRESS">[ENDEREÇO]</span>,
+          <span data-config="NEIGHBORHOOD">[BAIRRO]</span>,
+          <span data-config="CITY">[CIDADE]</span>
+        </p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">📸</div>
+        <p class="contact-card-label">Instagram</p>
+        <p class="contact-card-value">
+          <a href="#" data-href="INSTAGRAM_URL" target="_blank" rel="noopener">
+            @<span data-config="CLINIC_NAME">[CLÍNICA]</span>
+          </a>
+        </p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">🕐</div>
+        <p class="contact-card-label">Horário</p>
+        <p class="contact-card-value">Seg–Sex · Sáb</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="nav-logo-icon">🦷</div>
+          <span data-config="CLINIC_NAME">[NOME DA CLÍNICA]</span>
+        </div>
+        <p data-config="DESCRIPTION_SHORT">
+          [DESCRIÇÃO CURTA DA CLÍNICA]
+        </p>
+        <div class="footer-social">
+          <a href="#" data-href="INSTAGRAM_URL" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+          <a href="#" data-href="FACEBOOK_URL"  class="social-link" aria-label="Facebook"  target="_blank" rel="noopener">👤</a>
+          <a href="#" data-wa="" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#treatments">Tratamentos</a></li>
+          <li><a href="#results">Resultados</a></li>
+          <li><a href="#testimonials">Depoimentos</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Profissional -->
+      <div class="footer-col">
+        <h4>Profissional</h4>
+        <ul>
+          <li><a href="#about" data-config="DENTIST_NAME">[NOME DO DENTISTA]</a></li>
+          <li><a href="#about">CRO: <span data-config="DENTIST_CRO">[CRO]</span></a></li>
+          <li><a href="#booking">Agendar Consulta</a></li>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
+
+      <!-- Contato no footer -->
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>
+            <span data-config="ADDRESS">[ENDEREÇO]</span>,
+            <span data-config="NEIGHBORHOOD">[BAIRRO]</span>,
+            <span data-config="CITY">[CIDADE]</span> — <span data-config="STATE">[ESTADO]</span>
+          </span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <span data-config="PHONE">[TELEFONE]</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          <span data-config="EMAIL">[E-MAIL]</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">
+        © 2026 <span data-config="CLINIC_NAME">[NOME DA CLÍNICA]</span>. Todos os direitos reservados.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+        <a href="#hero">Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     WHATSAPP FLUTUANTE
+     ============================================================ -->
+<div id="wa-float">
+  <span class="wa-tooltip">Agende sua consulta</span>
+  <a href="#" class="wa-btn" data-wa="" aria-label="Abrir WhatsApp para agendar consulta">
+    💬
+  </a>
+</div>
+
+<!-- Scripts -->
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
