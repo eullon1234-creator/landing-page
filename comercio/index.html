@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO — substituído via config.js -->
+  <title>[TÍTULO SEO] — [NOME DA EMPRESA]</title>
+  <meta name="description" content="[DESCRIÇÃO SEO]" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="[TÍTULO SEO]" />
+  <meta property="og:description" content="[DESCRIÇÃO SEO]" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#6C63FF" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Config (carrega primeiro) -->
+  <script src="config.js"></script>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-icon">✦</div>
+      <span data-config="COMPANY_NAME">[NOME DA EMPRESA]</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#benefits">Benefícios</a></li>
+      <li><a href="#how-it-works">Como Funciona</a></li>
+      <li><a href="#testimonials">Depoimentos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#offer" class="btn btn-primary nav-cta desktop-only" id="nav-cta-btn">Quero [RESULTADO] →</a></li>
+    </ul>
+
+    <div id="hamburger" class="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu">
+  <ul>
+    <li><a href="#benefits">Benefícios</a></li>
+    <li><a href="#how-it-works">Como Funciona</a></li>
+    <li><a href="#testimonials">Depoimentos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#offer" class="btn btn-primary btn-block">Quero [RESULTADO] →</a></li>
+  </ul>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO — PRIMEIRA DOBRA
+════════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-orb-1"></div>
+  <div class="hero-bg-orb-2"></div>
+
+  <div class="container hero-inner">
+    <!-- Conteúdo -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge">✦ [SELO / FRASE DE DESTAQUE]</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="shimmer-text">[RESULTADO PRINCIPAL</span><br />
+        QUE O CLIENTE<br />
+        <span class="gradient-text">TANTO DESEJA]</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        [EXPLICAÇÃO CURTA DO PRODUTO/SERVIÇO E DO PRINCIPAL BENEFÍCIO — deixe o visitante entender
+        em 2 linhas o que você oferece e por que vale a pena.]
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#offer" class="btn btn-primary btn-lg" id="hero-cta-primary">
+          🚀 QUERO [RESULTADO]
+        </a>
+        <a href="#how-it-works" class="btn btn-secondary" id="hero-cta-secondary">
+          Saiba mais ↓
+        </a>
+      </div>
+
+      <div class="hero-social-proof">
+        <div class="hero-avatars">
+          <span class="avatar-a">JS</span>
+          <span class="avatar-b">MR</span>
+          <span class="avatar-c">AL</span>
+          <span class="avatar-d">+</span>
+        </div>
+        <p class="hero-social-text">
+          <strong data-config="CLIENTS_COUNT">[+X CLIENTES]</strong> já transformaram seus resultados
+        </p>
+      </div>
+    </div>
+
+    <!-- Visual -->
+    <div class="hero-visual">
+      <div class="hero-image-wrapper">
+        <div class="hero-image-placeholder">
+          <span class="icon">🖼️</span>
+          <p>[IMAGEM PRINCIPAL DO PRODUTO]</p>
+        </div>
+
+        <!-- Badges flutuantes -->
+        <div class="hero-floating-badge top-left">
+          <div class="badge-dot"></div>
+          <div>
+            <div style="font-weight:700; font-size:0.9rem;">★ <span data-config="SATISFACTION_PCT">[X%]</span></div>
+            <div style="color:var(--text-muted); font-size:0.75rem;">Satisfação</div>
+          </div>
+        </div>
+        <div class="hero-floating-badge bottom-right">
+          <span style="font-size:1.2rem;">🛡️</span>
+          <div>
+            <div style="font-weight:700; font-size:0.9rem;"><span data-config="GUARANTEE_DAYS">[X]</span> dias</div>
+            <div style="color:var(--text-muted); font-size:0.75rem;">Garantia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     BARRA DE CONFIANÇA
+════════════════════════════════════════════════════════════ -->
+<section id="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item animate-on-scroll">
+        <div class="trust-number gradient-text" data-config="CLIENTS_COUNT">[+X CLIENTES]</div>
+        <div class="trust-label">Clientes Atendidos</div>
+      </div>
+      <div class="trust-item animate-on-scroll animate-delay-1">
+        <div class="trust-number gradient-text"><span data-config="YEARS_EXP">[X+]</span></div>
+        <div class="trust-label">Anos de Experiência</div>
+      </div>
+      <div class="trust-item animate-on-scroll animate-delay-2">
+        <div class="trust-number gradient-text" data-config="SATISFACTION_PCT">[X%]</div>
+        <div class="trust-label">Taxa de Satisfação</div>
+      </div>
+      <div class="trust-item animate-on-scroll animate-delay-3">
+        <div class="trust-number gradient-text">24/7</div>
+        <div class="trust-label">Atendimento Especializado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PROBLEMA
+════════════════════════════════════════════════════════════ -->
+<section id="problem" class="section">
+  <div class="container">
+    <div class="problem-header">
+      <div>
+        <div class="section-label">O PROBLEMA</div>
+        <h2 class="section-title">
+          Você está cansado de<br/>
+          <span>[PROBLEMA PRINCIPAL]?</span>
+        </h2>
+        <p class="section-subtitle">
+          Se você já se sentiu assim, saiba que você não está sozinho.
+          Milhares de pessoas enfrentam esse desafio todo dia — e
+          continuam sem solução porque ainda não encontraram o caminho certo.
+        </p>
+      </div>
+      <div class="problem-image-side">
+        <div class="problem-img-box">
+          😔
+          <span>[IMAGEM ILUSTRATIVA DO PROBLEMA]</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-grid" style="margin-top:48px;">
+      <div class="problem-card animate-on-scroll">
+        <div class="problem-icon">❌</div>
+        <div class="problem-content">
+          <h3>[PROBLEMA 1]</h3>
+          <p>[Descrição breve do problema 1 e como ele impacta negativamente a vida do cliente.]</p>
+        </div>
+      </div>
+      <div class="problem-card animate-on-scroll animate-delay-1">
+        <div class="problem-icon">❌</div>
+        <div class="problem-content">
+          <h3>[PROBLEMA 2]</h3>
+          <p>[Descrição breve do problema 2 e como ele impacta negativamente a vida do cliente.]</p>
+        </div>
+      </div>
+      <div class="problem-card animate-on-scroll animate-delay-2">
+        <div class="problem-icon">❌</div>
+        <div class="problem-content">
+          <h3>[PROBLEMA 3]</h3>
+          <p>[Descrição breve do problema 3 e como ele impacta negativamente a vida do cliente.]</p>
+        </div>
+      </div>
+      <div class="problem-card animate-on-scroll animate-delay-3">
+        <div class="problem-icon">❌</div>
+        <div class="problem-content">
+          <h3>[PROBLEMA 4]</h3>
+          <p>[Descrição breve do problema 4 e como ele impacta negativamente a vida do cliente.]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SOLUÇÃO
+════════════════════════════════════════════════════════════ -->
+<section id="solution" class="section section-alt">
+  <div class="container solution-inner">
+    <div class="solution-text animate-on-scroll">
+      <div class="section-label">A SOLUÇÃO</div>
+      <h2 class="section-title">
+        Uma forma mais simples de<br/>
+        <span class="gradient-text">[RESULTADO]</span>
+      </h2>
+      <p class="section-subtitle">
+        Apresentamos <strong data-config="PRODUCT_NAME">[NOME DO PRODUTO]</strong> — a solução definitiva
+        para quem quer [RESULTADO PRINCIPAL] sem complicação.
+      </p>
+      <p style="color:var(--text-secondary); line-height:1.8; margin-top:16px;">
+        [PARÁGRAFO 1 — Explique como funciona a solução de forma simples e direta.
+        Mostre que é acessível e fácil de usar. Evite jargões técnicos.]
+      </p>
+      <p style="color:var(--text-secondary); line-height:1.8; margin-top:12px;">
+        [PARÁGRAFO 2 — Reforce os diferenciais. Por que essa solução é diferente de
+        tudo o que o cliente já viu? O que faz ela ser especial?]
+      </p>
+      <a href="#offer" class="btn btn-primary" style="margin-top:32px;" id="solution-cta">
+        Quero Conhecer →
+      </a>
+    </div>
+
+    <div class="solution-visual animate-on-scroll animate-delay-2">
+      <div class="solution-img-box">
+        🎯
+        <span>[IMAGEM / MOCKUP DA SOLUÇÃO]</span>
+        <div class="solution-badge-float">✦ [DIFERENCIAL]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     BENEFÍCIOS
+════════════════════════════════════════════════════════════ -->
+<section id="benefits" class="section">
+  <div class="container">
+    <div class="text-center animate-on-scroll">
+      <div class="section-label">BENEFÍCIOS</div>
+      <h2 class="section-title">Tudo que você vai <span class="gradient-text">conquistar</span></h2>
+      <p class="section-subtitle">
+        Com <span data-config="PRODUCT_NAME">[NOME DO PRODUTO]</span>, você tem acesso a
+        uma série de vantagens exclusivas para transformar seus resultados.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="card benefit-card animate-on-scroll">
+        <div class="benefit-icon">⚡</div>
+        <h3>[BENEFÍCIO 1]</h3>
+        <p>[Descrição do benefício 1 — explique como o cliente vai sentir na prática.]</p>
+      </div>
+      <div class="card benefit-card animate-on-scroll animate-delay-1">
+        <div class="benefit-icon">🎯</div>
+        <h3>[BENEFÍCIO 2]</h3>
+        <p>[Descrição do benefício 2 — explique como o cliente vai sentir na prática.]</p>
+      </div>
+      <div class="card benefit-card animate-on-scroll animate-delay-2">
+        <div class="benefit-icon">💰</div>
+        <h3>[BENEFÍCIO 3]</h3>
+        <p>[Descrição do benefício 3 — explique como o cliente vai sentir na prática.]</p>
+      </div>
+      <div class="card benefit-card animate-on-scroll animate-delay-3">
+        <div class="benefit-icon">🔒</div>
+        <h3>[BENEFÍCIO 4]</h3>
+        <p>[Descrição do benefício 4 — explique como o cliente vai sentir na prática.]</p>
+      </div>
+      <div class="card benefit-card animate-on-scroll animate-delay-4">
+        <div class="benefit-icon">🚀</div>
+        <h3>[BENEFÍCIO 5]</h3>
+        <p>[Descrição do benefício 5 — explique como o cliente vai sentir na prática.]</p>
+      </div>
+      <div class="card benefit-card animate-on-scroll animate-delay-5">
+        <div class="benefit-icon">⭐</div>
+        <h3>[BENEFÍCIO 6]</h3>
+        <p>[Descrição do benefício 6 — explique como o cliente vai sentir na prática.]</p>
+      </div>
+    </div>
+
+    <!-- CTA intermediário -->
+    <div class="text-center" style="margin-top:56px;">
+      <a href="#offer" class="btn btn-primary btn-lg" id="benefits-cta">
+        🚀 QUERO [RESULTADO] →
+      </a>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:12px;">
+        🔒 Compra 100% segura · <span data-config="GUARANTEE_DAYS">[X]</span> dias de garantia
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     COMO FUNCIONA
+════════════════════════════════════════════════════════════ -->
+<section id="how-it-works" class="section section-alt">
+  <div class="container">
+    <div class="text-center animate-on-scroll">
+      <div class="section-label">PASSO A PASSO</div>
+      <h2 class="section-title">Como funciona <span class="gradient-text">na prática</span></h2>
+      <p class="section-subtitle">
+        Simples, rápido e sem complicação. Em apenas 3 passos você já estará no caminho certo.
+      </p>
+    </div>
+
+    <div class="steps-wrapper">
+      <div class="step-card animate-on-scroll">
+        <div class="step-number">01</div>
+        <h3>[PRIMEIRO PASSO]</h3>
+        <p>[Descrição do primeiro passo — o que o cliente precisa fazer para começar.]</p>
+      </div>
+      <div class="step-card animate-on-scroll animate-delay-2">
+        <div class="step-number">02</div>
+        <h3>[SEGUNDO PASSO]</h3>
+        <p>[Descrição do segundo passo — o que acontece depois que o cliente realiza a ação inicial.]</p>
+      </div>
+      <div class="step-card animate-on-scroll animate-delay-4">
+        <div class="step-number">03</div>
+        <h3>[TERCEIRO PASSO]</h3>
+        <p>[Descrição do terceiro passo — o resultado que o cliente começa a obter.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     APRESENTAÇÃO DO PRODUTO
+════════════════════════════════════════════════════════════ -->
+<section id="product-showcase" class="section">
+  <div class="container showcase-inner">
+    <div class="showcase-image animate-on-scroll">
+      🖼️
+      <span>[IMAGEM DO PRODUTO]</span>
+    </div>
+
+    <div class="showcase-content animate-on-scroll animate-delay-2">
+      <div class="section-label">O PRODUTO</div>
+      <h2 class="section-title">
+        Conheça <span class="gradient-text" data-config="PRODUCT_NAME">[NOME DO PRODUTO]</span>
+      </h2>
+      <p class="section-subtitle" data-config="PRODUCT_DESCRIPTION">
+        [DESCRIÇÃO DO PRODUTO — fale sobre o que é, para quem é e o principal resultado que entrega.]
+      </p>
+
+      <div class="showcase-tags" style="margin-top:20px;">
+        <span class="tag">[CARACTERÍSTICA 1]</span>
+        <span class="tag">[CARACTERÍSTICA 2]</span>
+        <span class="tag">[CARACTERÍSTICA 3]</span>
+        <span class="tag">[CARACTERÍSTICA 4]</span>
+      </div>
+
+      <ul class="showcase-features">
+        <li>[DIFERENCIAL / CARACTERÍSTICA PRINCIPAL 1]</li>
+        <li>[DIFERENCIAL / CARACTERÍSTICA PRINCIPAL 2]</li>
+        <li>[DIFERENCIAL / CARACTERÍSTICA PRINCIPAL 3]</li>
+        <li>[DIFERENCIAL / CARACTERÍSTICA PRINCIPAL 4]</li>
+        <li>[DIFERENCIAL / CARACTERÍSTICA PRINCIPAL 5]</li>
+      </ul>
+
+      <a href="#offer" class="btn btn-primary" id="showcase-cta">
+        Quero Aproveitar →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     OFERTA
+════════════════════════════════════════════════════════════ -->
+<section id="offer" class="section section-alt">
+  <div class="container">
+    <div class="text-center animate-on-scroll">
+      <div class="section-label">OFERTA ESPECIAL</div>
+      <h2 class="section-title">
+        Condição <span class="gradient-text">exclusiva</span> por tempo limitado
+      </h2>
+      <p class="section-subtitle">
+        Aproveite agora antes que essa oportunidade acabe.
+      </p>
+    </div>
+
+    <div class="offer-box animate-on-scroll">
+      <div class="offer-header">
+        <div class="offer-label">🔥 [OFERTA ESPECIAL]</div>
+
+        <div class="offer-price">
+          <div class="offer-original">
+            De: <span data-config="PRODUCT_PRICE_ORIGINAL">[PREÇO ORIGINAL]</span>
+          </div>
+          <div class="offer-current gradient-text">
+            <span>R$</span> [PREÇO ATUAL]
+          </div>
+          <div class="offer-installments">
+            ou <span data-config="PRODUCT_INSTALLMENTS">[X]x de R$ [PARCELA]</span> sem juros
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-body">
+        <p style="color:var(--text-secondary); margin-bottom:20px; font-size:0.95rem;">
+          Tudo que está incluso nessa oferta:
+        </p>
+        <ul class="offer-items">
+          <li>[ITEM / BÔNUS 1]</li>
+          <li>[ITEM / BÔNUS 2]</li>
+          <li>[ITEM / BÔNUS 3]</li>
+          <li>[ITEM / BÔNUS 4]</li>
+          <li>[ITEM / BÔNUS 5]</li>
+        </ul>
+
+        <a href="#" class="btn btn-cta btn-block" id="offer-cta-btn" data-config="PURCHASE_LINK">
+          🔓 QUERO APROVEITAR A OFERTA →
+        </a>
+
+        <div class="offer-security">
+          🔒 Pagamento 100% seguro · Dados criptografados · [CONDIÇÃO DE PAGAMENTO]
+        </div>
+      </div>
+
+      <div class="offer-guarantee-strip">
+        🛡️ <strong><span data-config="GUARANTEE_DAYS">[X]</span> dias de garantia incondicional</strong>
+        — Se não gostar, devolvemos 100% do seu dinheiro.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     DEPOIMENTOS
+════════════════════════════════════════════════════════════ -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="text-center animate-on-scroll">
+      <div class="section-label">PROVA SOCIAL</div>
+      <h2 class="section-title">Quem já conhece, <span class="gradient-text">aprova</span></h2>
+      <p class="section-subtitle">
+        Veja o que nossos clientes dizem sobre a experiência com
+        <span data-config="PRODUCT_NAME">[NOME DO PRODUTO]</span>.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      <!-- Depoimento 1 -->
+      <div class="card testimonial-card animate-on-scroll">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#6C63FF,#4E46E5);">😊</div>
+          <div class="testimonial-info">
+            <h4>[NOME DO CLIENTE 1]</h4>
+            <span>[Profissão / Cidade]</span>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">[DEPOIMENTO DO CLIENTE 1 — Como o produto/serviço transformou sua vida, resultado obtido, o que mais gostou.]</p>
+      </div>
+
+      <!-- Depoimento 2 -->
+      <div class="card testimonial-card animate-on-scroll animate-delay-1">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#FF6B6B,#E84545);">🙌</div>
+          <div class="testimonial-info">
+            <h4>[NOME DO CLIENTE 2]</h4>
+            <span>[Profissão / Cidade]</span>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">[DEPOIMENTO DO CLIENTE 2 — Resultado específico que obteve e como recomendaria para outras pessoas.]</p>
+      </div>
+
+      <!-- Depoimento 3 -->
+      <div class="card testimonial-card animate-on-scroll animate-delay-2">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#00D4AA,#00A882);">🎉</div>
+          <div class="testimonial-info">
+            <h4>[NOME DO CLIENTE 3]</h4>
+            <span>[Profissão / Cidade]</span>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">[DEPOIMENTO DO CLIENTE 3 — Mencione o antes e depois, o impacto real e a satisfação com o suporte.]</p>
+      </div>
+
+      <!-- Depoimento 4 -->
+      <div class="card testimonial-card animate-on-scroll animate-delay-1">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#FFB800,#FF8C00);">🏆</div>
+          <div class="testimonial-info">
+            <h4>[NOME DO CLIENTE 4]</h4>
+            <span>[Profissão / Cidade]</span>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">[DEPOIMENTO DO CLIENTE 4 — Supere expectativas: mencione alguma surpresa positiva ou resultado além do esperado.]</p>
+      </div>
+
+      <!-- Depoimento 5 -->
+      <div class="card testimonial-card animate-on-scroll animate-delay-2">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#A855F7,#7C3AED);">⭐</div>
+          <div class="testimonial-info">
+            <h4>[NOME DO CLIENTE 5]</h4>
+            <span>[Profissão / Cidade]</span>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">[DEPOIMENTO DO CLIENTE 5 — Destaque o custo-benefício e por que valeu cada centavo investido.]</p>
+      </div>
+
+      <!-- Depoimento 6 -->
+      <div class="card testimonial-card animate-on-scroll animate-delay-3">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#EC4899,#BE185D);">💪</div>
+          <div class="testimonial-info">
+            <h4>[NOME DO CLIENTE 6]</h4>
+            <span>[Profissão / Cidade]</span>
+          </div>
+        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">[DEPOIMENTO DO CLIENTE 6 — Foque na facilidade de uso e na rapidez para ver os primeiros resultados.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     COMPARAÇÃO
+════════════════════════════════════════════════════════════ -->
+<section id="comparison" class="section section-alt">
+  <div class="container">
+    <div class="text-center animate-on-scroll">
+      <div class="section-label">COMPARAÇÃO</div>
+      <h2 class="section-title">
+        Por que escolher <span class="gradient-text" data-config="PRODUCT_NAME">[NOME DO PRODUTO]</span>?
+      </h2>
+      <p class="section-subtitle">
+        Veja as diferenças entre a forma tradicional e nossa solução.
+      </p>
+    </div>
+
+    <div class="comparison-table animate-on-scroll">
+      <div class="comparison-header">
+        <div class="comp-col-label feature-col"></div>
+        <div class="comp-col-label traditional">Forma Tradicional</div>
+        <div class="comp-col-label product" data-config="PRODUCT_NAME">[NOME DO PRODUTO]</div>
+      </div>
+      <div class="comparison-body">
+        <div class="comp-row">
+          <div class="comp-cell feature-name">Praticidade</div>
+          <div class="comp-cell traditional"><span class="check-n">✗</span> Complicado</div>
+          <div class="comp-cell product"><span class="check-y">✓</span> Simples e rápido</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell feature-name">Custo</div>
+          <div class="comp-cell traditional"><span class="check-n">✗</span> Alto investimento</div>
+          <div class="comp-cell product"><span class="check-y">✓</span> Acessível</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell feature-name">Velocidade</div>
+          <div class="comp-cell traditional"><span class="check-n">✗</span> Resultado demorado</div>
+          <div class="comp-cell product"><span class="check-y">✓</span> Resultados rápidos</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell feature-name">Qualidade</div>
+          <div class="comp-cell traditional"><span class="check-n">✗</span> Inconsistente</div>
+          <div class="comp-cell product"><span class="check-y">✓</span> Padrão premium</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell feature-name">Suporte</div>
+          <div class="comp-cell traditional"><span class="check-n">✗</span> Sem suporte</div>
+          <div class="comp-cell product"><span class="check-y">✓</span> Suporte dedicado</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell feature-name">Garantia</div>
+          <div class="comp-cell traditional"><span class="check-n">✗</span> Sem garantia</div>
+          <div class="comp-cell product"><span class="check-y">✓</span> <span data-config="GUARANTEE_DAYS">[X]</span> dias garantidos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     GARANTIA
+════════════════════════════════════════════════════════════ -->
+<section id="guarantee" class="section">
+  <div class="container">
+    <div class="text-center animate-on-scroll" style="margin-bottom:0;">
+      <div class="section-label">GARANTIA</div>
+      <h2 class="section-title">Você não tem <span class="gradient-text">nada a perder</span></h2>
+    </div>
+
+    <div class="guarantee-inner animate-on-scroll">
+      <div class="guarantee-badge">
+        <div class="shield">🛡️</div>
+        <div class="days" data-config="GUARANTEE_DAYS">[X]</div>
+        <div class="days-label">DIAS DE GARANTIA</div>
+      </div>
+      <div class="guarantee-content">
+        <h2>Satisfação garantida ou seu dinheiro de volta</h2>
+        <p>
+          Queremos que você experimente <strong data-config="PRODUCT_NAME">[NOME DO PRODUTO]</strong> sem
+          nenhum risco. Por isso, oferecemos uma garantia incondicional de
+          <strong data-config="GUARANTEE_DAYS">[X]</strong> dias.
+        </p>
+        <p>
+          Se por qualquer motivo você não ficar satisfeito com os resultados, basta nos
+          contatar dentro do prazo e devolvemos 100% do seu investimento. Sem perguntas,
+          sem burocracia.
+        </p>
+        <p>
+          [INFORMAÇÕES ADICIONAIS SOBRE A GARANTIA — prazo de processamento,
+          como solicitar, canal de atendimento.]
+        </p>
+        <a href="#offer" class="btn btn-primary" style="margin-top:24px;" id="guarantee-cta">
+          Quero com garantia →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════════════════════ -->
+<section id="faq" class="section section-alt">
+  <div class="container">
+    <div class="text-center animate-on-scroll">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Perguntas <span class="gradient-text">frequentes</span></h2>
+      <p class="section-subtitle">Tire todas as suas dúvidas antes de decidir.</p>
+    </div>
+
+    <div class="faq-wrapper animate-on-scroll">
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">
+          Para quem é <span data-config="PRODUCT_NAME" style="margin-left:4px;">[NOME DO PRODUTO]</span>?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            [RESPOSTA — Descreva o perfil do cliente ideal: quem vai se beneficiar mais,
+            qual problema ele precisa ter, qual nível de experiência é necessário.]
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">
+          Como funciona?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            [RESPOSTA — Explique o funcionamento de forma simples: o que o cliente
+            recebe, como acessa, qual o processo para começar a usar.]
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">
+          Quanto custa?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            [RESPOSTA — Informe o preço, as formas de pagamento disponíveis e
+            se há parcelamento. Explique o custo-benefício.]
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">
+          Como recebo após a compra?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            [RESPOSTA — Descreva o processo de entrega: físico, digital, prazo,
+            o que esperar após o pagamento ser confirmado.]
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">
+          Existe garantia?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Sim! Oferecemos <strong data-config="GUARANTEE_DAYS">[X]</strong> dias de garantia incondicional.
+            [RESPOSTA — Explique como funciona a garantia, como solicitar o reembolso
+            e qual o prazo para o dinheiro retornar.]
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">
+          Posso cancelar quando quiser?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            [RESPOSTA — Explique a política de cancelamento: se é possível cancelar,
+            como fazer, se há algum período mínimo de fidelidade.]
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">
+          Preciso ter experiência prévia?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            [RESPOSTA — Diga se o produto é para iniciantes ou avançados,
+            se há curva de aprendizado e se há suporte para quem está começando.]
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">
+          Como entro em contato com o suporte?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            [RESPOSTA — Liste os canais de atendimento disponíveis (WhatsApp, e-mail, chat),
+            o horário de funcionamento e o tempo médio de resposta.]
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     CTA FINAL
+════════════════════════════════════════════════════════════ -->
+<section id="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="container final-cta-content animate-on-scroll">
+    <div class="section-label" style="justify-content:center;">ÚLTIMA CHANCE</div>
+    <h2 class="section-title">
+      Está pronto para<br/>
+      <span class="shimmer-text">[RESULTADO PRINCIPAL]?</span>
+    </h2>
+    <p class="section-subtitle">
+      [FRASE FINAL DE CONVERSÃO — reforce o benefício principal, crie senso de urgência
+      leve e convide o visitante a agir agora.]
+    </p>
+
+    <div class="final-cta-group">
+      <a href="#offer" class="btn btn-cta btn-lg" id="final-cta-btn">
+        🚀 QUERO [RESULTADO] AGORA →
+      </a>
+      <div class="final-security">
+        🔒 Compra segura &nbsp;·&nbsp; 🛡️ <span data-config="GUARANTEE_DAYS">[X]</span> dias de garantia &nbsp;·&nbsp; ⚡ Acesso imediato
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     RODAPÉ
+════════════════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Marca -->
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <div class="nav-logo-icon">✦</div>
+          <span data-config="COMPANY_NAME">[NOME DA EMPRESA]</span>
+        </a>
+        <p>[Descrição curta da empresa — missão, valores ou diferencial em 2 linhas.]</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon wapp-link" aria-label="WhatsApp" data-config="WHATSAPP_LINK">💬</a>
+          <a href="#" class="social-icon" aria-label="Instagram" data-config="INSTAGRAM_LINK">📸</a>
+          <a href="#" class="social-icon" aria-label="Facebook" data-config="FACEBOOK_LINK">👤</a>
+          <a href="#" class="social-icon" aria-label="TikTok" data-config="TIKTOK_LINK">🎵</a>
+          <a href="#" class="social-icon" aria-label="YouTube" data-config="YOUTUBE_LINK">▶️</a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#benefits">Benefícios</a></li>
+          <li><a href="#how-it-works">Como Funciona</a></li>
+          <li><a href="#testimonials">Depoimentos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Política de Reembolso</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+
+      <!-- Contato -->
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" class="wapp-link" data-config="WHATSAPP_LINK">WhatsApp</a></li>
+          <li><a href="mailto:[EMAIL]">[EMAIL DA EMPRESA]</a></li>
+          <li><a href="#">Central de Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="footer-year"></span> <span data-config="COMPANY_NAME">[NOME DA EMPRESA]</span>. Todos os direitos reservados.</p>
+      <p class="footer-legal">CNPJ: <span data-config="CNPJ">[XX.XXX.XXX/XXXX-XX]</span> · <span data-config="COMPANY_ADDRESS">[ENDEREÇO]</span></p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     BOTÃO FLUTUANTE WHATSAPP
+════════════════════════════════════════════════════════════ -->
+<div id="wapp-float">
+  <span class="wapp-label">Fale conosco</span>
+  <a href="#" class="wapp-btn wapp-link" aria-label="WhatsApp" id="wapp-btn" target="_blank" rel="noopener noreferrer">
+    💬
+  </a>
+</div>
+
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script>
+  // Ano no footer
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
