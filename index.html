@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Landing Pages — Eullon</title>
+  <meta name="description" content="Portal de demonstração das Landing Pages de alta conversão criadas por Eullon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #131b2e;
+      --border: rgba(255, 255, 255, 0.08);
+      --primary: #3b82f6;
+      --accent-teal: #0E8388;
+      --accent-gold: #C5A880;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --radius: 16px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(14, 131, 136, 0.15), transparent 40%);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      width: 100%;
+      flex: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .tag-dentist { color: #2dd4bf; }
+    .tag-business { color: #60a5fa; }
+    .tag-custom { color: #fbbf24; }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #d1d5db;
+      margin-bottom: 8px;
+    }
+
+    .features-list li::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-teal {
+      background: linear-gradient(135deg, #0E8388, #076569);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(14, 131, 136, 0.35);
+    }
+
+    .btn-teal:hover {
+      background: linear-gradient(135deg, #14a0a6, #0E8388);
+      box-shadow: 0 8px 25px rgba(14, 131, 136, 0.5);
+    }
+
+    .btn-blue-dent {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+    }
+
+    .btn-blue-dent:hover {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge">🚀 GitHub Pages Live Hub</div>
+      <h1>Portfólio de Landing Pages</h1>
+      <p class="subtitle">Modelos de alta conversão, responsivos, com integração direta ao WhatsApp e design premium.</p>
+    </header>
+
+    <div class="grid">
+
+      <!-- Card 1: Dra. Ana Clara -->
+      <div class="card" style="border-color: rgba(14, 131, 136, 0.4);">
+        <div>
+          <span class="card-tag tag-custom">⭐ Projeto Personalizado</span>
+          <div class="card-icon">👩‍⚕️</div>
+          <h2>Dra. Ana Clara Costa</h2>
+          <p>Consultório Odontológico Sorrisos Bonitos (Amarante - PI). Especialista em Cirurgia de Siso e Odontologia Geral.</p>
+          <ul class="features-list">
+            <li>Slogan: "Aqui ninguém sente dor"</li>
+            <li>CRO-PI 10523 & Contato direto</li>
+            <li>Horários & Localização em Amarante</li>
+            <li>Agendamento via WhatsApp</li>
+          </ul>
+        </div>
+        <a href="./dentista%20ana%20clara/index.html" class="btn btn-teal">
+          Acessar Landing Page <span>→</span>
+        </a>
+      </div>
+
+      <!-- Card 2: Dentista Genérico / Template -->
+      <div class="card">
+        <div>
+          <span class="card-tag tag-dentist">🦷 Modelo Odontológico</span>
+          <div class="card-icon">🏥</div>
+          <h2>Dentista Premium (Modelo)</h2>
+          <p>Template configurável para dentistas e clínicas odontológicas. 23+ seções prontas para vender como serviço.</p>
+          <ul class="features-list">
+            <li>Configuração central em config.js</li>
+            <li>Modal de tratamentos & Antes e Depois</li>
+            <li>Checklist de coleta com 81 itens</li>
+            <li>Estrutura & Depoimentos integrados</li>
+          </ul>
+        </div>
+        <a href="./dentista/index.html" class="btn btn-blue-dent">
+          Acessar Modelo Base <span>→</span>
+        </a>
+      </div>
+
+      <!-- Card 3: Comércio -->
+      <div class="card">
+        <div>
+          <span class="card-tag tag-business">🏬 Negócios & Comércio</span>
+          <div class="card-icon">🛒</div>
+          <h2>Comércio & Serviços Locais</h2>
+          <p>Landing page completa e versátil para lojas físicas, empresas e prestadores de serviços locais.</p>
+          <ul class="features-list">
+            <li>Catálogo de produtos / serviços</li>
+            <li>Botão flutuante de WhatsApp</li>
+            <li>Design moderno e de alta conversão</li>
+            <li>SEO local configurável</li>
+          </ul>
+        </div>
+        <a href="./comercio/index.html" class="btn btn-primary">
+          Acessar Landing Page <span>→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Eullon. Hospedado gratuitamente com GitHub Pages.</p>
+  </footer>
+
+</body>
+</html>
