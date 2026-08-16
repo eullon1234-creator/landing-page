@@ -50,7 +50,7 @@ const DENTIST_CONFIG = {
   // ─────────────────────────────────────────────
   //  6. MÉTRICAS DE CONFIANÇA
   // ─────────────────────────────────────────────
-  GOOGLE_RATING:    "5.0 — 48 avaliações",
+  GOOGLE_RATING:    "5.0",
   PATIENTS_COUNT:   "500+",
   YEARS_EXPERIENCE: "5+",
   SPECIALTIES_COUNT:"7",
